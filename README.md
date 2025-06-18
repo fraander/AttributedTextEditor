@@ -13,7 +13,7 @@ Markdown-annotating version of TextEditor using AttributedString features in iOS
 - [ ] `.link` pattern matches aren't clickable, yet.
     - [ ] Clickable phone numers and email addresses is another goal.
 - [ ] The rest of a line for a checked box can't be matched successfully yet, so the rest of the line can't be dimmed, striked through, etc.
-- [ ] 
+- [ ] Copy button cannot yet support copying rich-text version of the string, just plain text.
 
 ### Other goals
 - [ ] Extensibility / user-adjustability in what patterns can be matched and what appearance the matches adopt, so that others can use the spec for their needs, such as the original which was annotating `@mentions` and `www.links.co`
@@ -37,5 +37,10 @@ I know that this isn't perfect adherence to the Markdown specification. It's bee
 * Code block: `\`\`\` code block \`\`\``
 
 ## Screenshot
-![image](https://github.com/user-attachments/assets/30cbddb4-61c7-45ee-b94d-bc9321d121ac)
+<table>
+  <tr>
+    <td>
+      <img width="150" alt="Block of markdown sample text with formatting applied." src="https://github.com/user-attachments/assets/30cbddb4-61c7-45ee-b94d-bc9321d121ac">
+    </td>
+ </table>
 
