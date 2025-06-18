@@ -2,6 +2,10 @@
 
 Markdown-annotating version of TextEditor using AttributedString features in iOS/macOS 26. Based on initial implementation of [ComposerUI in IcySky](https://github.com/Dimillian/IcySky/tree/main/Packages/Features/Sources/ComposerUI) by [@Dimillian](https://github.com/Dimillian).
 
+```swift
+.package(url: "https://github.com/fraander/AttributedTextEditor.git")
+```
+
 ## Current Implementation
 
 ### Current challenges
