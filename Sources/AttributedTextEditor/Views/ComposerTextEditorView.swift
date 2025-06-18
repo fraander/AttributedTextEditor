@@ -11,8 +11,6 @@ public struct ComposerTextEditorView: View {
     @State private var isPlaceholder = true
     @State private var processor = ComposerTextProcessor()
     
-    @ScaledMetric private var fontSize: CGFloat = 20
-    
     public init(
         text: Binding<AttributedString>,
         selection: Binding<AttributedTextSelection>,
@@ -29,7 +27,7 @@ public struct ComposerTextEditorView: View {
         ZStack(alignment: .topLeading) {
             TextEditor(text: $text, selection: $selection)
                 .textInputFormattingControlVisibility(.hidden, for: .all) // hide all built-in formatting controls
-                .font(.system(size: fontSize))
+                .font(.body)
                 .frame(maxWidth: .infinity)
                 .focused($isFocused)
                 .textEditorStyle(.plain)
@@ -41,9 +39,9 @@ public struct ComposerTextEditorView: View {
             
             if isPlaceholder {
                 Text(placeholder)
-                    .font(.system(size: fontSize))
+                    .font(.body)
                     .foregroundStyle(.secondary)
-                    .padding(.top, 6)
+                    .padding(.top, 8)
                     .padding(.leading, 8)
             }
         }
