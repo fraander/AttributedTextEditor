@@ -4,18 +4,27 @@ Markdown-annotating version of TextEditor using AttributedString features in iOS
 
 ## Current Implementation
 
-### Supported Specification
-Bold: `*bold*`
-Italic: `_italic_`
-Link: `[link](https://www.github.com/fraander)` (Not clickable, yet)
-Blockquote: `> blockquote`
-Underline: `__underline__`
-Strikethrough: `~strikethrough~`
-Heading 1: `# Heading 1`
-Heading 2: `## Heading 2`
-Heading 3: `### Heading 3`
-Unordered list: `- `, `+ `, `* ` 
-Ordered list: `1. `
-Checkbox: `- [ ]`, `- [x]` (Having trouble adjusting the rest of the line, following `- [x]`)
-Inline code: `\`code\``
-Code block: `\`\`\` code block \`\`\``
+### Current challenges
+- [ ] `ComposerToolbarView.swift` buttons don't actually work yet. Working versions that make the selection jump to the end have been found, but that's not good enough.
+- [ ] `.link` pattern matches aren't clickable, yet.
+- [ ] The rest of a line for a checked box can't be matched successfully yet, so the rest of the line can't be dimmed, striked through, etc.
+
+### Other goals
+- [ ] Extensibility / user-adjustability so that others can use the spec for their needs, such as the original which was annotating `@mentions` and `www.links.co` 
+
+### Supported Specification in Editor
+I know that this isn't perfect adherence to the Markdown specification. It's been slightly adjusted based on personal preference. Ideally, the project evolves such that many options are available to pick from, and any that aren't available can be addressed by user-created extensions.
+* Bold: `*bold*`
+* Italic: `_italic_`
+* Link: `[link](https://www.github.com/fraander)` (Not clickable, yet)
+* Blockquote: `> blockquote`
+* Underline: `__underline__`
+* Strikethrough: `~strikethrough~`
+* Heading 1: `# Heading 1`
+* Heading 2: `## Heading 2`
+* Heading 3: `### Heading 3`
+* Unordered list: `- `, `+ `, `* ` 
+* Ordered list: `1. `
+* Checkbox: `- [ ]`, `- [x]` (Having trouble adjusting the rest of the line, following `- [x]`)
+* Inline code: `\`code\``
+* Code block: `\`\`\` code block \`\`\``
