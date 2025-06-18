@@ -56,8 +56,8 @@ I know that this isn't perfect adherence to the Markdown specification. It's bee
 * Unordered list: `- `, `+ `, `* ` 
 * Ordered list: `1. `
 * Checkbox: `- [ ]`, `- [x]` (Having trouble adjusting the rest of the line, following `- [x]`)
-* Inline code: `\`code\``
-* Code block: `\`\`\` code block \`\`\``
+* Inline code: `[backtick]code[backtick]`
+* Code block: ` ```code block``` `
 
 ## Screenshot
 <table>
