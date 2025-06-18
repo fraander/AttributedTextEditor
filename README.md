@@ -11,7 +11,7 @@ Markdown-annotating version of TextEditor using AttributedString features in iOS
 ### Current challenges
 - [ ] `ComposerToolbarView.swift` buttons don't actually work yet. Working versions that make the selection jump to the end have been found, but that's not good enough.
 - [ ] `.link` pattern matches aren't clickable, yet.
-    - [ ] Clickable phone numers and email addresses is another goal.
+    - [ ] Clickable phone numers and email addresses is another goal. In addition to fuzzier link recognition, so `https://www.` isn't always required to make something clickable if not using the Markdown annotation version.
 - [ ] The rest of a line for a checked box can't be matched successfully yet, so the rest of the line can't be dimmed, striked through, etc.
 - [ ] Copy button cannot yet support copying rich-text version of the string, just plain text.
 
