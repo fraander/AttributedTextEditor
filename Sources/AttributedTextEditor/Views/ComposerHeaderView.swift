@@ -1,12 +1,14 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+
+
 public struct ComposerHeaderView: ToolbarContent {
-    @Environment(\.dismiss) var dismiss
     
     var text: AttributedString
+    var copyButton: Bool = true
     
-    var dismissPlacement: ToolbarItemPlacement {
+    static var dismissPlacement: ToolbarItemPlacement {
         #if os(iOS)
         .topBarTrailing
         #elseif os(macOS)
@@ -14,7 +16,7 @@ public struct ComposerHeaderView: ToolbarContent {
         #endif
     }
     
-    var copyPlacement: ToolbarItemPlacement {
+    static var copyPlacement: ToolbarItemPlacement {
         #if os(iOS)
         .topBarLeading
         #elseif os(macOS)
@@ -23,22 +25,10 @@ public struct ComposerHeaderView: ToolbarContent {
     }
     
     public var body: some ToolbarContent {
-        ToolbarItem(placement: dismissPlacement) {
-            Button(role: .confirm) { dismiss() }
-        }
+        ToolbarItem(placement: ComposerHeaderView.dismissPlacement) { DismissButton() }
         
-        ToolbarItem(placement: copyPlacement) {
-            Button("Copy", systemImage: "document.on.document", action: copyPlainText)
+        if copyButton {
+            ToolbarItem(placement: ComposerHeaderView.copyPlacement) { CopyButton(text: text) }
         }
-    }
-    
-    func copyPlainText() {
-        let content = String(text.characters)
-        #if os(iOS)
-        UIPasteboard.general.string = content
-        #elseif os(macOS)
-        NSPasteboard.general.clearContents()
-        NSPasteboard.general.setString(content, forType: .string)
-        #endif
     }
 }

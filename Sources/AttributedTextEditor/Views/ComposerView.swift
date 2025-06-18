@@ -8,9 +8,11 @@ public struct ComposerView: View {
     public init(
         text: AttributedString = .init(),
         selection: AttributedTextSelection = AttributedTextSelection(),
+        asSheet: Bool = false,
         presentationDetent: PresentationDetent = .large,
         title: String = "Compose",
-        placeholder: String = "What's on your mind?"
+        placeholder: String = "What's on your mind?",
+        showCopyButton: Bool = true
     ) {
         self.text = text
         self.selection = selection
@@ -18,6 +20,8 @@ public struct ComposerView: View {
         self.title = title
         self.placeholder = placeholder
         self.isFocused = false
+        self.showCopyButton = showCopyButton
+        self.asSheet = asSheet
     }
     
     @State private var text: AttributedString = """
@@ -57,7 +61,10 @@ public struct ComposerView: View {
     @State var presentationDetent: PresentationDetent = .large
     var title: String = "Compose"
     var placeholder: String = "What's on your mind?"
+    var showCopyButton: Bool = true
+    var asSheet: Bool = false
     
+    @Environment(\.dismiss) var dismiss
     @FocusState var isFocused: Bool
     
     public var body: some View {
@@ -70,7 +77,14 @@ public struct ComposerView: View {
                 .focused($isFocused)
                 .toolbar {
                     ComposerToolbarView(text: $text, selection: $selection, dismissKeyboard: { withAnimation {isFocused = false }})
-                    ComposerHeaderView(text: text)
+                    
+                    if asSheet {
+                        ComposerHeaderView(text: text, copyButton: true)
+                    } else if showCopyButton {
+                        ToolbarItem(placement: ComposerHeaderView.dismissPlacement) {
+                            CopyButton(text: text)
+                        }
+                    }
                 }
         }
         .presentationDetents([.height(200), .large], selection: $presentationDetent)

@@ -61,7 +61,6 @@ enum ComposerTextPattern: String, CaseIterable, Codable {
         case .orderedList: return "(?m)^\\s*\\d+\\. "
         case .uncheckedBox: return "- \\[ \\]"
         case .checkedBox: return "- \\[x\\]"
-#warning("checkedBoxText not working right now")
         case .checkedBoxText: return "(?m)^- \\[x\\] .+$"
         case .inlineCode: return "`[^`\\n]+`"
         case .codeBlock: return "(?m)^```[\\s\\S]*?^```"

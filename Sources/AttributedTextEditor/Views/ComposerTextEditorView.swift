@@ -19,7 +19,6 @@ public struct ComposerTextEditorView: View {
                 .textInputFormattingControlVisibility(.hidden, for: .all) // hide all built-in formatting controls
                 .font(.system(size: fontSize))
                 .frame(maxWidth: .infinity)
-                .padding()
                 .focused($isFocused)
                 .textEditorStyle(.plain)
                 .attributedTextFormattingDefinition(ComposerFormattingDefinition())
@@ -32,7 +31,6 @@ public struct ComposerTextEditorView: View {
                 Text(placeholder)
                     .font(.system(size: fontSize))
                     .foregroundStyle(.secondary)
-                    .padding()
                     .padding(.top, 6)
                     .padding(.leading, 8)
             }

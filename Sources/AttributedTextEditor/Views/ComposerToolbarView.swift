@@ -17,8 +17,6 @@ public struct ComposerToolbarView: ToolbarContent {
     }
     
     public var body: some ToolbarContent {
-        
-        #warning("need to make the controls actually do something")
         ToolbarItemGroup(placement: placement) {
             let count = text.characters.count
             Text("\(count)")
