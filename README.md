@@ -6,6 +6,29 @@ Markdown-annotating version of TextEditor using AttributedString features in iOS
 .package(url: "https://github.com/fraander/AttributedTextEditor.git")
 ```
 
+## Usage
+
+```swift
+import AttributedTextEditor
+```
+
+### Drop-in replacement for `TextEditor`, use 
+```swift
+@State var text = AttributedString()
+@State var selection = AttributedTextSelection()
+
+var body: some View {
+    ComposerTextEditorView(text: $text, selection: $selection)
+}
+```
+
+### Standalone view (good for experimentation before implementing in your own project)
+```swift
+var body: some View {
+    ComposerView()
+}
+```
+
 ## Current Implementation
 
 ### Current challenges
