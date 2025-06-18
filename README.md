@@ -31,7 +31,7 @@ var body: some View {
 
 ## Current Implementation
 
-### Current challenges
+### Challenges / blockers
 - [ ] `ComposerToolbarView.swift` buttons don't actually work yet. Working versions that make the selection jump to the end have been found, but that's not good enough.
 - [ ] `.link` pattern matches aren't clickable, yet.
     - [ ] Clickable phone numers and email addresses is another goal. In addition to fuzzier link recognition, so `https://www.` isn't always required to make something clickable if not using the Markdown annotation version.
