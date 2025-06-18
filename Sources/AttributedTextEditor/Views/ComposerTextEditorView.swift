@@ -4,7 +4,7 @@ public struct ComposerTextEditorView: View {
     @Binding var text: AttributedString
     @Binding var selection: AttributedTextSelection
     
-    var placeholder: String = "What's on your mind?"
+    var placeholder: String
     
     @FocusState private var isFocused: Bool
     
@@ -12,6 +12,18 @@ public struct ComposerTextEditorView: View {
     @State private var processor = ComposerTextProcessor()
     
     @ScaledMetric private var fontSize: CGFloat = 20
+    
+    public init(
+        text: Binding<AttributedString>,
+        selection: Binding<AttributedTextSelection>,
+        placeholder: String = "What's on your mind?"
+    ) {
+        _text = text
+        _selection = selection
+        self.placeholder = placeholder
+        self.isPlaceholder = true
+        self.processor = ComposerTextProcessor()
+    }
     
     public var body: some View {
         ZStack(alignment: .topLeading) {
