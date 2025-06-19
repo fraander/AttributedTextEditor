@@ -37,6 +37,7 @@ var body: some View {
     - [ ] Clickable phone numers and email addresses is another goal. In addition to fuzzier link recognition, so `https://www.` isn't always required to make something clickable if not using the Markdown annotation version.
 - [ ] The rest of a line for a checked box can't be matched successfully yet, so the rest of the line can't be dimmed, striked through, etc.
 - [ ] Copy button cannot yet support copying rich-text version of the string, just plain text.
+- [ ] Placeholder placement on MacOS is incorrect and needs to be tuned.
 
 ### Other goals
 - [ ] Extensibility / user-adjustability in what patterns can be matched and what appearance the matches adopt, so that others can use the spec for their needs, such as the original which was annotating `@mentions` and `www.links.co`
